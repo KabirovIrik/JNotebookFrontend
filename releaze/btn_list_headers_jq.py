@@ -19,21 +19,7 @@ display(HTML('''
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.ik_btn span:first-child {
-    display: inline-block;
-}
-.ik_btn span:last-child {
-    display: none;
-}
-.ik-hidden .cell .input {
-    display: none !important;
-}
-.ik-btn-active span:first-child {
-    display: none;
-}
-.ik-btn-active span:last-child {
-    display: inline-block;
-}
+
 .ik_list_header {
     position: relative;
 }
@@ -83,21 +69,12 @@ display(HTML('''
 if(!notebook) {
     var notebook = $('#notebook'),
         panel = $('#maintoolbar-container'),
-        btn_display_code = $('#btn_display_code'),
         list_header = $('#btn_list_headers');
 
-    if(btn_display_code.length == 0) {
-        panel.append('<a id="btn_display_code" class="js-ik_btn ik_btn btn-group"><span>Скрыть код</span><span>Показать код</span></a>');
-    }
     if(list_header.length == 0) {
         panel.append('<div id="btn_list_headers" class="js-ik_list_header ik_list_header ik_btn btn-group">Перейти к заголовку<ul></ul></div>');
     }
 
-    $('#btn_display_code').click(function(e) {
-        e.preventDefault();
-        notebook.toggleClass('ik-hidden');
-        $(this).toggleClass('ik-btn-active');
-    })
     $('#btn_list_headers').click(function(e) {
         if(e.target.className.indexOf('ik_list_header') != -1) {
             var ul = $(this).find('ul');
