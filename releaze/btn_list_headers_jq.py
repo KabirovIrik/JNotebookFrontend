@@ -45,7 +45,8 @@ display(HTML('''
     border-radius: 2px;
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-    
+    overflow-y: scroll;
+    max-height: 500px;
 }
 .ik_list_header.active ul,
 .ik_list_header.active > .fa{
